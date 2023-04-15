@@ -1,13 +1,154 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --main-color: #012939;
+  --secondary-color: #7db00e;
+  --blue-color: #10394A;
+  --gray-color: #767676;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  background-color: #10394A;
 }
+
+.css-zxdg2z {
+  padding: 24px 10px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+a span {
+  letter-spacing: 1px !important;
+}
+
+.Text {
+  color: white;
+}
+
+.inp::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  ;
+}
+
+.MuiPaper-elevation {
+  background-color: #012939 !important;
+}
+
+.MuiPaper-elevation div {
+  color: white;
+}
+
+.MuiDrawer-root div .MuiTypography-root {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 131.9%;
+}
+
+.css-1hsz34s-MuiDrawer-docked .MuiListItem-gutters {
+  margin-left: 10px !important;
+  border-radius: 10px;
+  border-right: 0;
+}
+
+.css-1hsz34s-MuiDrawer-docked .logo1 {
+  display: block;
+}
+
+.css-1hsz34s-MuiDrawer-docked .logo2 {
+  display: none;
+}
+
+.MuiDrawer-root .MuiListItem-gutters:hover,
+a.active .MuiListItem-gutters {
+  background-color: #377114!important;
+}
+
+@media (min-width: 450px) {
+  body[state='false'] .MuiDrawer-paperAnchorLeft {
+    display: block;
+  }
+}
+
+@media (min-width: 640px) {
+  .HeaderRight {
+    margin-right: 50px !important;
+  }
+}
+
+@media (min-width: 657px) {
+  .HeaderRight {
+    margin-right: 20px !important;
+  }
+}
+
+@media (max-width: 655px) {
+  body[state='true'] .MuiDrawer-paperAnchorLeft {
+    display: none !important;
+  }
+  .bar {
+    display: flex !important;
+  }
+  .css-2dum1v-MuiDrawer-docked {
+    position: absolute;
+  }
+}
+
+/* For Dark Mode Switch */
+
+.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase .MuiSwitch-input {
+  left: 0 !important;
+}
+
+span.Mui-checked .MuiSwitch-thumb {
+  background-color: rgb(49, 49, 49) !important;
+}
+
+.MuiSwitch-thumb {
+  background-color: rgb(196, 196, 196) !important;
+}
+
+.MuiSwitch-track {
+  background-color: white !important;
+  opacity: 1 !important;
+}
+
+/* Form */
+
+.css-37jdci-MuiTypography-root {
+  padding-left: 0;
+}
+
+.MuiTypography-root input {
+  width: 100% !important;
+}
+
+.MuiFormControl-root {
+  margin: 10px 0 !important;
+}
+
+.MuiSelect-select {
+  padding: 7px !important;
+}
+
+.MuiInputBase-formControl {
+  border-radius: 15px !important;
+  padding: 2px 2px 2px 5px;
+  border: 1px solid #377114;
+  outline: none !important;
+  color: white !important;
+}
+
+.MuiSelect-iconOutlined {
+  color: white !important;
+}
+
+.MuiMenu-list {
+  color: white;
+}
+
+.MuiMenu-paper .MuiButtonBase-root:hover {
+  background-color: #10394A;
+}
+

@@ -1,0 +1,181 @@
+.tasks {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 230px;
+  top: -20px;
+  width: calc(100% - 250px);
+}
+
+.table {
+  padding: 3rem 1rem 1rem 1rem;
+  color: white;
+  width: 100%;
+}
+.table .header-table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.table .header-table span {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.table > :nth-child(2) {
+  margin-top: 2rem;
+  margin-bottom: 10px;
+}
+.table > :nth-child(3) {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.table > :nth-child(3) > :nth-child(1) {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+.table > :nth-child(3) > :nth-child(1) > :nth-child(1) {
+  padding: 10px 10px 10px 25px;
+  border-radius: 10px;
+  background-color: #767676;
+  width: 260px;
+  position: relative;
+}
+.table > :nth-child(3) > :nth-child(1) > :nth-child(1) > :nth-child(1) {
+  outline: none;
+  border: none;
+  background-color: #767676;
+  color: white;
+}
+.table > :nth-child(3) > :nth-child(1) > :nth-child(1) > :nth-child(2) {
+  position: absolute;
+  left: 3px;
+  color: rgba(255, 255, 255, 0.685);
+  bottom: 10px;
+}
+.table
+  > :nth-child(3)
+  > :nth-child(1)
+  > :nth-child(1)
+  > :nth-child(1)::placeholder {
+  color: rgba(255, 255, 255, 0.685);
+  font-weight: bold;
+  margin-left: 8px;
+}
+.table > :nth-child(3) > :nth-child(1) > :nth-child(2),
+.table > :nth-child(3) > :nth-child(1) > :nth-child(3) {
+  padding: 10px 80px 10px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--secondary-color);
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  outline: none;
+}
+.table > :nth-child(3) > :nth-child(2) {
+  padding: 10px;
+  border-radius: 12px;
+  background-color: var(--secondary-color);
+  color: white;
+  border: 1px solid white;
+  font-weight: bold;
+  cursor: pointer;
+  width: 130px;
+}
+.table > :nth-child(4) {
+  height: 753px;
+  width: 100%;
+  margin: 5px auto;
+  border: 1px solid white;
+  background-color: #012939;
+}
+
+.table > :nth-child(4) > tr {
+  position: relative;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.table > :nth-child(4) > tr:hover > th {
+  border-color: var(--secondary-color);
+}
+.table > :nth-child(4) > tr:hover {
+  background-color: var(--secondary-color);
+}
+.table > :nth-child(4) > tr:hover > td {
+  border-color: var(--secondary-color);
+}
+
+.table > :nth-child(4) > tr:nth-last-of-type(1)::before {
+  background-color: transparent;
+}
+/* ============= media ============= */
+@media screen and (max-width: 1024px) {
+  .table > :nth-child(3) > :nth-child(1) > :nth-child(1) {
+    padding: 10px 10px 10px 20px;
+    width: 160px;
+  }
+  .table > :nth-child(3) > :nth-child(1) > :nth-child(2),
+  .table > :nth-child(3) > :nth-child(1) > :nth-child(3) {
+    padding: 10px 50px 10px 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .tasks {
+    left: 2%;
+    top: 20px;
+    width: 96%;
+  }
+  .table .header-table span {
+    margin-right: 10px;
+  }
+  .table > :nth-child(3) > :nth-child(1) > :nth-child(1) {
+    width: 87px;
+  }
+  .table > :nth-child(3) > :nth-child(1) > :nth-child(1) > :nth-child(1) {
+    width: 87px;
+  }
+  .table > :nth-child(3) > :nth-child(1) > :nth-child(2),
+  .table > :nth-child(3) > :nth-child(1) > :nth-child(3) {
+    padding: 10px 15px 10px 10px;
+  }
+  .table > :nth-child(3) > :nth-child(2) {
+    padding: 10px;
+    position: absolute;
+    top: 107px;
+    left: 68%;
+    width: 86px;
+  }
+  table,
+  th,
+  td {
+    padding: 5px;
+  }
+  .table {
+    padding: 3rem 0.5rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  table,
+  th,
+  td {
+    padding: 3px;
+    font-size: 12px;
+  }
+  .table > :nth-child(3) > :nth-child(2) {
+    padding: 5px;
+  }
+  .table > :nth-child(3) > :nth-child(1) {
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .table > :nth-child(3) > :nth-child(2) {
+    top: 115px;
+    left: 63%;
+  }
+}
