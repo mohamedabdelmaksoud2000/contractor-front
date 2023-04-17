@@ -1,12 +1,12 @@
 import { Checkbox, FormControl, FormControlLabel, Grid, MenuItem, Select, Typography } from '@mui/material'
-import React  from 'react'
+import React from 'react'
 import "./index.css"
 import useSave from '../../../../Hooks/useSave';
 
-function Secgedule({ title, inputText, select, active, AddChosen }) {
+function Secgedule({ title, inputText, select, active, task, AddTask }) {
 
 
-    const {choose , handleChange} = useSave();
+    const { choose, handleChange } = useSave();
 
 
     return (
@@ -46,11 +46,10 @@ function Secgedule({ title, inputText, select, active, AddChosen }) {
             </Typography>
 
 
-            {select ? (
+            {select === "Choose task" ? (
                 <FormControl sx={{ width: "100%" }}>
                     <Select
-                        value={choose}
-                        onChange={handleChange}
+                        onChange={AddTask}
                         displayEmpty
                         inputProps={{ 'aria-label': 'Without label' }}
                         sx={{
@@ -62,38 +61,40 @@ function Secgedule({ title, inputText, select, active, AddChosen }) {
                         <MenuItem value="">
                             <span>{select} :</span>
                         </MenuItem>
-                        <MenuItem value={"Ten"}>Ten</MenuItem>
-                        <MenuItem value={"Twenty"}>Twenty</MenuItem>
-                        <MenuItem value={"Thirty"}>Thirty</MenuItem>
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
                     </Select>
 
-                    {AddChosen ? (
-                        <div style={{ marginTop: "20px" }}>
-                            <div style={{ position: "relative", background: "rgba(225, 225, 225, 0.4)", width: "200px", height: "40px" }}>
-                                <div style={{ display: "flex", alignItems: "center", height: "100%", padding: "10px", color: "white" }}>
-                                    <div>
-                                        dasdasdas
-                                    </div>
-                                </div>
-                                <div style={{
-                                    position: "absolute",
-                                    right: "0",
-                                    top: "0",
-                                    bottom: "0",
-                                    width: "40px",
-                                    background: "rgba(225, 225, 225, 0.4)",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    cursor: "pointer"
-                                }}>
-                                    <div style={{ color: "white", fontWeight: "bold" }}>X</div>
-                                </div>
-                            </div>
-                        </div>
-                    ) : null}
+                </FormControl>
+            )
+                : 
+                (
+                    <FormControl sx={{ width: "100%" }}>
+                        <Select
+                            value={choose}
+                            onChange={handleChange}
+                            displayEmpty
+                            inputProps={{ 'aria-label': 'Without label' }}
+                            sx={{
+                                background: "linear-gradient(180deg, #7DB00E 0%, #377114 100%)",
+                                borderRadius: "7px !important",
+                                marginTop: "10px"
+                            }}
+                        >
+                            <MenuItem value="">
+                                <span>{select}</span>
+                            </MenuItem>
+                            <MenuItem value={"Ten"}>Ten</MenuItem>
+                            <MenuItem value={"Twenty"}>Twenty</MenuItem>
+                            <MenuItem value={"Thirty"}>Thirty</MenuItem>
+                        </Select>
 
-                </FormControl>) : null}
+                    </FormControl>
+                )
+
+
+
+            }
 
             {active ? (
                 <Typography sx={{ marginTop: "15px" }} variant='div' component="div">

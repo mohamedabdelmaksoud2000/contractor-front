@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Switch, Typography } from '@mui/material'
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import Interrogative from "../../Icons/interrogative.png"
+import { Switch, Typography } from '@mui/material';
 import React, { useState } from 'react'
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import Interrogative from "../../../Icons/interrogative.png"
 
-function ProjectHeader() {
 
+
+function HeaderClients() {
     const [checked, setChecked] = useState(true);
 
     const handleChange = (event) => {
@@ -33,18 +34,18 @@ function ProjectHeader() {
                 <Switch
                     checked={checked}
                     onChange={handleChange}
-                    inputProps={{'aria-label': 'controlled' }}
+                    inputProps={{ 'aria-label': 'controlled' }}
                 />
 
-                <Typography className='d-none d-md-block' variant='div' sx={{ color: "white", fontWeight: "bold" , fontSize: "22px" , fontFamily: ""}}>
+                <Typography className='d-none d-md-block' variant='div' sx={{ color: "white", fontWeight: "bold", fontSize: "22px", fontFamily: "" }}>
                     Dark Mode
                 </Typography>
 
-                <Typography variant='div' sx={{ color: "white", fontWeight: "bold", marginLeft: "20px" , cursor: "pointer" }}>
+                <Typography variant='div' sx={{ color: "white", fontWeight: "bold", marginLeft: "20px", cursor: "pointer" }}>
                     <NotificationsNoneIcon sx={{ fontSize: "30px" }} />
                 </Typography>
 
-                <Typography variant='div' sx={{ color: "white", fontWeight: "bold", marginLeft: "10px" , cursor: "pointer" }}>
+                <Typography variant='div' sx={{ color: "white", fontWeight: "bold", marginLeft: "10px", cursor: "pointer" }}>
                     <img src={Interrogative} />
                 </Typography>
             </Typography>
@@ -55,4 +56,4 @@ function ProjectHeader() {
     )
 }
 
-export default ProjectHeader
+export default HeaderClients

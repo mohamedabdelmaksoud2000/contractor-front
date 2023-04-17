@@ -2,7 +2,7 @@ import React from 'react'
 import ProjectHeader from './ProjectHeader'
 import ProjectCenter from './ProjectCenter'
 import ProjectTable from './ProjectTable'
-import AddNewProject from './AddNewProjectComponents/AddNewProject'
+import AddNewProject from '../AddNewProjectComponents/MainAddNewProject/AddNewProject'
 
 
 function Projects() {

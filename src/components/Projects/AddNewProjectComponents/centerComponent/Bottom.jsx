@@ -21,9 +21,40 @@ function Bottom() {
         if (file) {
             setImg(URL.createObjectURL(file?.target?.files[0]));
         }
-
-
     }, [file])
+
+
+
+    const NoImg = () => {
+        return (
+            <Typography htmlFor="file" sx={{ height: "170px", marginTop: "20px" }} variant='div' component="div">
+                <label htmlFor="file">
+                    <input id='file' type="file" onChange={handleChange} />
+                    <Typography variant='div' component="div" className='parentInputImg' sx={{
+                        width: "270px",
+                        height: "100%",
+                        marginTop: "20px",
+                        border: "2px dashed  #7DB00E",
+                        padding: "20px",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        borderRadius: "10px",
+                        cursor: "pointer"
+                    }} >
+                        <Typography sx={{ margin: "20px 0", cursor: "pointer" }} variant='div' component="div">
+                            <img src={iconDropImg} alt="" />
+                        </Typography>
+                        <Typography variant='div' component="div">
+                            <Typography className='Text' style={{ fontSize: "bold !important", cursor: "pointer" }}>Drop your image here or select <span style={{ color: "#7DB00E" }}>click to browse</span></Typography>
+                        </Typography>
+                    </Typography>
+                </label >
+            </Typography>
+
+        )
+    }
 
 
 
@@ -32,48 +63,26 @@ function Bottom() {
 
             <Typography className='Text' variant='h5' component="div">
                 Project image:
-
             </Typography>
 
-
-            {img ? (
-                <Typography onClick={() => setImg("")} sx={{ margin: "20px 0", cursor: "pointer", maxWidth: "300px", height: "200px" }} variant='div' component="div">
-                    <img className='w-100 h-100' src={img} alt="" />
-                </Typography>) : (
-                <Typography htmlFor="file" sx={{ height: "170px", marginTop: "20px" }} variant='div' component="div">
-                    <label htmlFor="file">
-
-                        <input id='file' type="file" onChange={handleChange} />
-                        <Typography variant='div' component="div" className='parentInputImg' sx={{
-                            width: "270px",
-                            height: "100%",
-                            marginTop: "20px",
-                            border: "2px dashed  #7DB00E",
-                            padding: "20px",
-                            display: "flex",
-                            flexDirection: "column",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "10px",
-                            cursor: "pointer"
-                        }} >
-                            <Typography sx={{ margin: "20px 0", cursor: "pointer" }} variant='div' component="div">
-                                <img src={iconDropImg} alt="" />
-
-                            </Typography>
-
-                            <Typography variant='div' component="div">
-                                <Typography className='Text' style={{ fontSize: "bold !important", cursor: "pointer" }}>Drop your image here or select <span style={{ color: "#7DB00E" }}>click to browse</span></Typography>
-                            </Typography>
-                        </Typography>
-
-                    </label >
-                </Typography>
-            )
+            {img ?
+                (
+                    <Typography onClick={() => setImg("")} sx={{
+                        margin: "20px 0",
+                        cursor: "pointer",
+                        maxWidth: "300px",
+                        height: "200px",
+                        border: "2px solid white",
+                        borderRadius: ""
+                    }} variant='div' component="div">
+                        <img className='w-100 h-100' src={img} alt="" />
+                    </Typography>
+                )
+                :
+                (
+                    NoImg()
+                )
             }
-
-
-
 
         </Typography >
     )

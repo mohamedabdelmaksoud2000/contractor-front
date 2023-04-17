@@ -1,25 +1,21 @@
-
-import Typography from '@mui/material/Typography';
+import { FormControl, MenuItem, Select, Typography } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
-import PlusImg from '../../Icons/plus.png';
-import useProjectCenter from '../../Hooks/useProjectCenter';
-
+import PlusImg from '../../../Icons/icon _plus_.png';
 import React from 'react'
+import useProjectCenter from '../../../Hooks/useProjectCenter';
+import useClient from '../../../Hooks/useClient';
 
-import { FormControl, MenuItem, Select } from '@mui/material';
+function CenterClients() {
+    const { Search, SearchIconWrapper, StyledInputBase, handleChange, handleChange2, age1, age2 } = useProjectCenter()
 
-
-function ProjectCenter() {
-
-    const { Search, SearchIconWrapper, StyledInputBase, handleChange, handleChange2, age1, age2, HandleAddProject } = useProjectCenter()
-
+    const { HandleAddOpenClient } = useClient()
 
 
     return (
 
         <Typography className='row' variant='div' component="div" sx={{ marginTop: "10px", display: "flex", justifyContent: "start", alignItems: "center" }}>
             <Typography variant='h4' sx={{ margin: "10px 0", color: "white", fontWeight: "600", paddingLeft: "0", fontSize: "30px" }}>
-                Projects
+                Clients
             </Typography>
             <Typography className='col-lg-3 col-md-6 col-12' variant='div' component="div" >
                 <Search sx={{ margin: "0 !important", color: "white", background: "rgba(225, 225, 225, 0.4);" }}>
@@ -72,11 +68,12 @@ function ProjectCenter() {
                 </div>
             </Typography>
             <Typography variant='div' component="div" className='col-lg-5 col-md-3 col-12 d-md-flex align-items-end justify-content-end mt-md-0 mt-2 ' >
-                <button onClick={HandleAddProject} className='btn' style={{ background: "#7DB00E", color: "white", fontWeight: "bold" }}>
-                    <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                        {/* <span style={{ fontSize: "18px", marginRight: "7px" , marginLeft: "10px", fontWeight: "bold" }}>+</span>
-                        <span>Add Project</span> */}
-                        <img className='w-100' src={PlusImg} alt="" />
+                <button onClick={HandleAddOpenClient} className='btn' style={{ background: "#7DB00E", color: "white", fontWeight: "bold" }}>
+                    <div className='d-flex'>
+                        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" , marginRight: "5px" }}>
+                            <img className='w-100' src={PlusImg} alt="" />
+                        </div>
+                        <span>Add Client</span>
                     </div>
                 </button>
             </Typography>
@@ -84,4 +81,4 @@ function ProjectCenter() {
     )
 }
 
-export default ProjectCenter
+export default CenterClients

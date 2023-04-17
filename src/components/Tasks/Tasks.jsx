@@ -6,7 +6,7 @@ import { BsQuestionCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 const Tasks = () => {
   return (
-    <div className="tasks">
+    <div className="">
       <div className="table">
         <div className="header-table">
           <span>company name</span>

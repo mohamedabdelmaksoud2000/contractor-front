@@ -26,6 +26,10 @@ a span {
   color: white;
 }
 
+.MuiCheckbox-root svg{
+  color: #77B255 !important;
+}
+
 .inp::placeholder {
   color: rgba(255, 255, 255, 0.7);
   ;
@@ -152,3 +156,15 @@ span.Mui-checked .MuiSwitch-thumb {
   background-color: #10394A;
 }
 
+
+.tableClient tr th:last-child {
+  text-align: center !important;
+}
+
+.tableClientBody td{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.164);
+}
+
+.tableClientBody td:last-child {
+  text-align: center !important;
+}

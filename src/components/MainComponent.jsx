@@ -5,9 +5,11 @@ import StorageIcon from '@mui/icons-material/Storage';
 import { Route, Routes } from 'react-router-dom'
 import Newtask from './Nwetask/Newtask'
 import TaskName from './TaskName/TaskName';
-import Projects from './Projects/Projects';
+import Projects from './Projects/MainProject/Projects';
 import Tasks from './Tasks/Tasks';
 import { Typography } from '@mui/material';
+import Request from './Request/Request';
+import Clients from './Clients/Clients';
 
 
 function MainComponent() {
@@ -33,7 +35,6 @@ function MainComponent() {
     }
 
     return (
-
         <>
             <Typography variant='div' component="div" onClick={handleSideBar} className='bar' sx={{ position: "absolute", top: "27px", right: "10px", background: "white", borderRadius: "5px", padding: "5px", cursor: "pointer", display: "none", justifyContent: "center", alignItems: "center" }}>
                 <StorageIcon />
@@ -45,6 +46,9 @@ function MainComponent() {
                 <Route path='/newtask' element={<Newtask />} />
                 <Route path='/taskName' element={<TaskName />} />
                 <Route path='/project' element={<Projects />} />
+                <Route path='/request' element={<Request />} />
+
+                <Route path='/clients' element={<Clients />} />
 
             </Routes>
         </>

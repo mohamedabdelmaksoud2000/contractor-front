@@ -1,31 +1,23 @@
 import InputBase from '@mui/material/InputBase';
 import { styled, alpha } from '@mui/material/styles';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 function useProjectCenter() {
     const [age1, setAge] = useState('');
     const [age2, setAge2] = useState('');
 
-    const [AddProject, setAddProject] = useState(false)
 
+    const HandleAddOpenProject = () => {
+        document.querySelector(".BigMain").setAttribute("status", true)
+    }
 
-    const HandleAddProject = () => {
-        setAddProject(!AddProject)
+    const HandleAddCloseProject = () => {
 
-        console.log(AddProject);
+        document.querySelector(".BigMain").setAttribute("status", false)
     }
 
 
-    useEffect(() => {
-
-        if (AddProject) {
-            document.querySelector(".BigMain").setAttribute("status", true)
-        } else {
-            document.querySelector(".BigMain").removeAttribute("status")
-        }
-
-    }, [AddProject])
 
 
     const Search = styled('div')(({ theme }) => ({
@@ -84,8 +76,9 @@ function useProjectCenter() {
         handleChange2,
         age1,
         age2,
-        AddProject,
-        HandleAddProject
+        HandleAddOpenProject,
+        HandleAddCloseProject
+
     }
 
 }

@@ -1,16 +1,13 @@
 import { Typography } from '@mui/material'
 import React from 'react'
-import "./AddNewProject.css"
-import HeaderAddNew from './HeaderAddNew'
-import CenterAddNew from './CenterAddNew'
-import Footer from './Footer/Footer'
 
+import "./AddNewClient.css"
+import HeaderAddNewClient from './component/HeaderAddNew'
+import CenterAddClient from './component/CenterAddClient'
 
-function AddNewProject() {
-
-
+function AddNewClient() {
     return (
-        <Typography variant='div' component="div" className='ADD-Project' sx={{
+        <Typography variant='div' component="div" className='ADD-Client' sx={{
             width: 0,
             position: "absolute",
             top: 0,
@@ -24,12 +21,12 @@ function AddNewProject() {
             marginTop: "20px",
             height: "100%"
         }}>
-            <HeaderAddNew />
-            <CenterAddNew />
-            <Footer />
+            <HeaderAddNewClient />
+            <CenterAddClient />
+
 
         </Typography>
     )
 }
 
-export default AddNewProject
+export default AddNewClient

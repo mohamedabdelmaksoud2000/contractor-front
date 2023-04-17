@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material'
 import React from 'react'
-import Top from './centerComponent/Top'
-import Bottom from './centerComponent/Bottom'
+import Top from '../centerComponent/Top'
+import Bottom from '../centerComponent/Bottom'
 
 function CenterAddNew() {
     return (
