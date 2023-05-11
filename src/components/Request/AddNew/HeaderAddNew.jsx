@@ -5,7 +5,7 @@ import Interrogative from "../../../Icons/interrogative.png"
 
 import React from 'react'
 
-function HeaderAddNew() {
+function HeaderAddNew({ name }) {
 
     return (
         <div>
@@ -39,8 +39,8 @@ function HeaderAddNew() {
 
             </Typography>
 
-            <Typography className='Text' sx={{margin: "20px 0" , fontSize: "30px" , fontWeight: "bold"}}>
-                New Request
+            <Typography className='Text' sx={{ margin: "20px 0", fontSize: "30px", fontWeight: "bold" }}>
+                {name ? name : "New Request"}
             </Typography>
         </div>
     )

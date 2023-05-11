@@ -67,7 +67,7 @@ function CenterClients() {
                     </FormControl>
                 </div>
             </Typography>
-            <Typography variant='div' component="div" className='col-lg-5 col-md-3 col-12 d-md-flex align-items-end justify-content-end mt-md-0 mt-2 ' >
+            <Typography variant='div' component="div" className='col-lg-5 col-md-3 col-12 d-md-flex align-items-end justify-content-end mt-md-0 mt-2 p-0' >
                 <button onClick={HandleAddOpenClient} className='btn' style={{ background: "#7DB00E", color: "white", fontWeight: "bold" }}>
                     <div className='d-flex'>
                         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" , marginRight: "5px" }}>

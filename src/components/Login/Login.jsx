@@ -1,27 +1,116 @@
-import React from "react";
-import "./Login.css";
-import logo from "./constractor-logo.svg";
-const Login = () => {
-  return (
+import { Button, Grid, Typography } from '@mui/material'
+import React from 'react'
+import Logo from "../../Icons/Logo.png"
+import { Link } from 'react-router-dom'
 
-    
-    <>
-    
-      <div className="login">
-        <img src={logo} alt="" />
-        <h1>log in</h1>
-        <input type="text" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <span>Forgot password?</span>
-        <button>Log In</button>
-        <button>Log in with google</button>
-        <span>
-          <span>Don't have an account?</span>
-          <span>Sign up</span>
-        </span>
-      </div>
-    </>
-  );
-};
+function Login() {
+    return (
+        <Grid sx={{ height: "100vh" }} container>
+            <Grid sx={{ height: "100%" }} item xs={12} md={8} >
+                <Typography variant='div' component="div" sx={{
+                    background: "#012939",
+                    padding: "25px",
+                    height: "100%"
+                }}>
 
-export default Login;
+                    <Typography className='d-flex flex-column justify-content-between h-100' variant='div' component="div" >
+                        <Typography style={{ width: "250px", height: "70px" }} variant='div' component="div">
+                            <img className='w-100 h-100' src={Logo} alt="" />
+
+                        </Typography>
+
+
+                        <Typography variant='div' component="div">
+                            <Typography className='text-white fw-bold' variant='h5' sx={{
+                                fontSize: "35px",
+                                marginBottom: "30px"
+                            }}>
+                                Login
+                            </Typography>
+                            <Typography variant='div' component="div">
+                                <input type="email" placeholder='Email' className='p-2 ps-4 my-3 btnLogin' />
+                                <input type="password" placeholder='Password' className='p-2 ps-4 mt-1 mb-3 btnLogin' />
+
+                                <Typography variant='div' component="div">
+                                    <Link style={{
+                                        color: "white",
+                                        fontSize: "25px",
+                                        marginLeft: "2%"
+                                    }}>
+                                        Forgot Password?
+                                    </Link>
+                                </Typography>
+                                <Typography sx={{ margin: "30px 0" }} variant='div' component="div">
+                                    <Button sx={{
+                                        width: "100%",
+                                        background: "#7DB00E",
+                                        color: "white",
+                                        padding: "10px",
+                                        fontSize: "22px",
+                                        fontWeight: "bold",
+                                        border: "1px solid #7DB00E"
+                                    }}>Log in</Button>
+                                </Typography>
+
+                            </Typography>
+                        </Typography>
+
+                        <Typography variant='div' component="div" sx={{
+                            color: "white",
+                            textAlign: "center",
+                            fontSize: "30px",
+                            padding: "10px 30px"
+                        }}>
+
+                            This site is protected by reCAPTCHA and the Google
+                            <Typography variant='span' sx={{ color: "#7DB00E", marginLeft: "5px" }}>
+                                Privacy Policy
+                            </Typography> and
+                            <Typography variant='span' sx={{ color: "#7DB00E", marginLeft: "5px" }}>
+                                Terms of Service
+                            </Typography> apply.
+
+
+                        </Typography>
+                    </Typography>
+
+
+                </Typography>
+
+            </Grid>
+            <Grid sx={{ height: "100%" }} item xs={12} md={4} >
+                <Typography className='d-flex flex-column justify-content-center align-items-center text-white p-5 p-md-3 p-lg-5 h-100' variant='div' component="div">
+                    <Typography variant='div' component="div" sx={{ fontSize: "30px", fontWeight: "bold", textAlign: "center" }}>
+                        Level up your community
+                    </Typography>
+
+                    <Typography className='my-3' variant='div' component="div" sx={{
+                        background: "#D9D9D9",
+                        height: "600px",
+                        width: "100%"
+                    }}>
+                    </Typography>
+
+                    <Typography variant='div' component="div" className='w-100 mt-2'>
+                        <Link to="/register">
+                            <Button sx={{
+                                color: "white",
+                                width: "100%",
+                                fontSize: "22px",
+                                background: "#7DB00E",
+                                border: "1px solid #7DB00E"
+                            }}>Signup Free</Button>
+                        </Link>
+                    </Typography>
+
+
+
+                </Typography>
+
+            </Grid>
+
+        </Grid>
+    )
+}
+
+export default Login

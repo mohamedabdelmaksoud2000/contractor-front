@@ -1,7 +1,7 @@
 
 import Typography from '@mui/material/Typography';
 import SearchIcon from '@mui/icons-material/Search';
-import PlusImg from '../../../Icons/plus.png';
+import PlusImg from '../../../Icons/🦆 icon _plus_.png';
 import useProjectCenter from '../../../Hooks/useProjectCenter';
 
 import React from 'react'
@@ -71,10 +71,11 @@ function ProjectCenter() {
                     </FormControl>
                 </div>
             </Typography>
-            <Typography variant='div' component="div" className='col-lg-5 col-md-3 col-12 d-md-flex align-items-end justify-content-end mt-md-0 mt-2 ' >
-                <button  onClick={HandleAddOpenProject} className='btn' style={{ background: "#7DB00E", color: "white", fontWeight: "bold" }}>
+            <Typography variant='div' component="div" className='col-lg-5 col-md-3 col-12 d-md-flex align-items-end justify-content-end mt-md-0 mt-2 p-0' >
+                <button onClick={HandleAddOpenProject} className='btn' style={{ background: "#7DB00E", color: "white", fontWeight: "bold" }}>
                     <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                        <img className='w-100' src={PlusImg} alt="" />
+                        <span style={{ marginRight: "5px" }}><img src={PlusImg} alt="" /></span>
+                        <span>Add Project</span>
                     </div>
                 </button>
             </Typography>

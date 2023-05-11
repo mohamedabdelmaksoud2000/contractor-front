@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { styled, useTheme } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
+import { useDispatch, useSelector } from 'react-redux';
+import { ToDarkMode, ToLightMode } from '../Store/Type';
 
 
 function useApp() {
@@ -11,6 +13,53 @@ function useApp() {
     const [open, setOpen] = useState(true);
 
     const [width, setWidth] = useState()
+
+    const [checked, setChecked] = useState(true);
+
+
+
+    const ModeDarkMode = useSelector(state => state.modeReducer.mode)
+
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        if(checked){
+            dispatch({type: ToDarkMode})
+        }else{
+            dispatch({type: ToLightMode})
+        }
+    },[checked , dispatch])
+    
+
+    useEffect(() => {
+        if (ModeDarkMode) {
+            localStorage.setItem("mode", "true")
+        }
+        else {
+            localStorage.setItem("mode", "false")
+        }
+    }, [ModeDarkMode])
+
+
+    useEffect(() => {
+        if(localStorage.getItem("mode") === "true"){
+            setChecked(true)
+        }else{
+            setChecked(false)
+        }
+    },[])
+
+
+
+    useEffect(() => {
+        if (checked) {
+            document.querySelector(".BigMain").setAttribute("dark", 'true')
+        } else {
+            document.querySelector(".BigMain").setAttribute("dark", 'false')
+        }
+    }, [checked])
+
 
     setInterval(() => {
         setWidth(window.innerWidth)
@@ -79,7 +128,7 @@ function useApp() {
         }),
     );
 
-    return {open, handleDrawerOpenAndClose, Drawer, DrawerHeader, theme}
+    return { open, handleDrawerOpenAndClose, Drawer, DrawerHeader, theme, checked, setChecked }
 }
 
 export default useApp

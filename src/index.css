@@ -18,6 +18,44 @@ a {
   text-decoration: none;
 }
 
+
+.textColor::placeholder{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.BigMain[dark=true] .textColor {
+  color: white !important;
+}
+.BigMain[dark=false] .textColor {
+  color: black !important;
+}
+
+.BigMain[dark=true] .textColorMessage {
+  color: #CBCBCB !important;
+}
+.BigMain[dark=false] .textColorMessage {
+  color: black !important;
+}
+
+
+
+.BigMain[dark=true] .paymentText {
+  color: white !important;
+}
+.BigMain[dark=false] .paymentText {
+  color: black !important;
+}
+
+
+.BigMain[dark=false] .MuiTableCell-root {
+  background-color: #D4E8EF ;
+  color: black;
+}
+
+.BigMain[dark=false] .MuiTableCell-root span {
+  color: black;
+}
+
 a span {
   letter-spacing: 1px !important;
 }
@@ -26,13 +64,29 @@ a span {
   color: white;
 }
 
-.MuiCheckbox-root svg{
+.MuiCheckbox-root svg {
   color: #77B255 !important;
 }
 
 .inp::placeholder {
   color: rgba(255, 255, 255, 0.7);
-  ;
+  
+}
+.btnLogin{
+  background: transparent;
+  color: white;
+  border: 1px solid #7DB00E;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.btnLogin::placeholder{
+  color: white;
+}
+
+
+.PriceText input {
+  padding: 6px;
 }
 
 .MuiPaper-elevation {
@@ -99,6 +153,13 @@ a.active .MuiListItem-gutters {
   }
 }
 
+@media (min-width: 1300px) {
+  .paymentText{
+    width: 50%;
+    margin-left: auto;
+  }
+}
+
 /* For Dark Mode Switch */
 
 .css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase .MuiSwitch-input {
@@ -156,15 +217,28 @@ span.Mui-checked .MuiSwitch-thumb {
   background-color: #10394A;
 }
 
-
 .tableClient tr th:last-child {
   text-align: center !important;
 }
 
-.tableClientBody td{
+.tableClientBody td {
   border-bottom: 1px solid rgba(255, 255, 255, 0.164);
 }
 
 .tableClientBody td:last-child {
   text-align: center !important;
+}
+
+
+/*invoice*/
+.invoice .css-78me8v-MuiFormControl-root , .invoice .css-q8hpuo-MuiFormControl-root {
+  margin: 5px 0 !important;
+}
+
+.invoice input , .invoice .MuiOutlinedInput-root {
+  margin: 5px 0 !important;
+  height: 40px
+}
+.invoice .css-tzqvgi-MuiTypography-root , .invoice .css-jtlyof-MuiTypography-root{
+  margin: 5px 0  !important;
 }

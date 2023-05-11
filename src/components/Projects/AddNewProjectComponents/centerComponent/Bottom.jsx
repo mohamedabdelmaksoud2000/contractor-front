@@ -64,7 +64,6 @@ function Bottom() {
             <Typography className='Text' variant='h5' component="div">
                 Project image:
             </Typography>
-
             {img ?
                 (
                     <Typography onClick={() => setImg("")} sx={{

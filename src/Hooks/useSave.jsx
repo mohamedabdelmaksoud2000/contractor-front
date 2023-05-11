@@ -9,7 +9,6 @@ function useSave() {
 
         setChoose(event.target.value);
 
-        console.log(choose);
     };
 
 
